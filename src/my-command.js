@@ -14,62 +14,65 @@ if (selectedCount === 0) {
     interpret(outputString);
 }
 
-function onTranslate(context) {
-    var doc = context.document;
-    var selection = context.selection;
-    //var document = sketch.getSelectedDocument();
-    context.document.showMessage('hello');
-    const selectedLayers = context.selection;
-    const selectedCount = selectedLayers.length;
-
-    if (selectedCount === 0) {
-        context.document.showMessage('No layers are selected.');
-    } else {
-
-        var outputString = sketch.UI.getStringFromUser('Type command', 'default');
-        interpret(outputString);
-    }
-}
-
 function interpret(input) {
-    var calculations = input.split(/(?=[a-z])/);
+    var parameters = input.split(/(?=[a-z])/);
     var y;
     var frame;
     var layer;
-    context.document.showMessage(calculations);
-    for (var i = 0; i<calculations.length; i++) {
+    var extraParameters = [];
+    context.document.showMessage(parameters);
+    for (var i = 0; i<parameters.length; i++) {
+        if (parameters[i].length === 1) {
+            context.document.showMessage('multiple commandX: '+parameters);
+            extraParameters.push(parameters[i]);
 
-        if (calculations[i].charAt(0) === 'x') {
-            for (y = 0; y<context.selection.length; y++) {
-                layer = context.selection[y];
-                layer.absoluteRect().setRulerX(Number(calculations[i].substring(1)));
-            }
-        }
+        } else {
+            var value = Number(parameters[i].substring(1));
 
-        else if (calculations[i].charAt(0) === 'y') {
-            for (y = 0; y<context.selection.length; y++) {
-                layer = context.selection[y];
-                layer.absoluteRect().setRulerY(Number(calculations[i].substring(1)));
+            if (extraParameters.length !== 0) {
+                for (var j = 0; j<extraParameters.length; j++) {
+                    translate(extraParameters[j], value);
+                }
             }
-        }
-
-        else if (calculations[i].charAt(0) === 'w') {
-            for (y = 0; y<context.selection.length; y++) {
-                layer = context.selection[y];
-                frame = layer.frame();
-                frame.setWidth(Number(calculations[i].substring(1)));
-            }
-        }
-
-        else if (calculations[i].charAt(0) === 'h') {
-            for (y = 0; y<context.selection.length; y++) {
-                layer = context.selection[y];
-                frame = layer.frame();
-                frame.setHeight(Number(calculations[i].substring(1)));
-            }
+            var toTranslate = parameters[i].charAt(0);
+            translate(toTranslate, value);
         }
     }
     context.document.reloadInspector();
+}
+
+function translate(toTranselate, value) {
+    toTranselate = toTranselate.toLowerCase();
+
+    if (toTranselate === 'x') {
+        for (y = 0; y<context.selection.length; y++) {
+            layer = context.selection[y];
+            layer.absoluteRect().setRulerX(value);
+        }
+    }
+
+    else if (toTranselate === 'y') {
+        for (y = 0; y<context.selection.length; y++) {
+            layer = context.selection[y];
+            layer.absoluteRect().setRulerY(value);
+        }
+    }
+
+    else if (toTranselate === 'w') {
+        for (y = 0; y<context.selection.length; y++) {
+            layer = context.selection[y];
+            frame = layer.frame();
+            frame.setWidth(value);
+        }
+    }
+
+    else if (toTranselate === 'h') {
+        for (y = 0; y<context.selection.length; y++) {
+            layer = context.selection[y];
+            frame = layer.frame();
+            frame.setHeight(value);
+        }
+    }
 }
 
 
