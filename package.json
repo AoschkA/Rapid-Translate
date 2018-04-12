@@ -1,11 +1,11 @@
 {
-  "name": "easy-translate",
+  "name": "Rapid-Translate",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
   },
   "skpm": {
-    "name": "easy-translate",
+    "name": "Rapid-Translate",
     "manifest": "src/manifest.json",
     "main": "plugin.sketchplugin",
     "assets": [

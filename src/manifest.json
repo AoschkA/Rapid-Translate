@@ -4,15 +4,17 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "my-command",
-      "identifier": "my-command-identifier",
-      "script": "./my-command.js"
+      "name": "translate",
+      "identifier": "onTranslate",
+      "script": "my-command.js",
+      "handler" : "onTranslate",
+      "shortcut" : "ctrl shift y"
     }
   ],
   "menu": {
-    "title": "easy-translate",
+    "title": "rapid-translate",
     "items": [
-      "my-command-identifier"
+      "onTranslate"
     ]
   }
 }

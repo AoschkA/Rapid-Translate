@@ -1,14 +1,8 @@
 var sketch = require('sketch');
-log(sketch.version.api);
-log(sketch.version.sketch);
-
-var document = sketch.getSelectedDocument();
-var page = document.selectedPage;
-
-var Group = sketch.Group;
-var Shape = sketch.Shape;
-var Rectangle = sketch.Rectangle;
-
+var doc = context.document;
+var selection = context.selection;
+//var document = sketch.getSelectedDocument();
+context.document.showMessage('hello');
 const selectedLayers = context.selection;
 const selectedCount = selectedLayers.length;
 
@@ -16,23 +10,68 @@ if (selectedCount === 0) {
     context.document.showMessage('No layers are selected.');
 } else {
 
-    var outputString = sketch.UI.getStringFromUser('HELLO', 'default');
-    context.document.showMessage(`${selectedCount} layers selected. `+outputString);
-
-    if (outputString[0] === 'x') {
-        var amount = outputString.substring(1);
-        context.document.showMessage(amount.toString());
-        //var rect = new Rectangle(selectedLayers[0]);
-        var newRect = new Shape({
-            parent: page,
-            frame: new Rectangle(Number(amount), 0, 50, 50),
-            style: {
-                borders: [{ color: '#000431' }],
-            },
-        })
-
-    }
-
+    var outputString = sketch.UI.getStringFromUser('Type command', 'default');
+    interpret(outputString);
 }
+
+function onTranslate(context) {
+    var doc = context.document;
+    var selection = context.selection;
+    //var document = sketch.getSelectedDocument();
+    context.document.showMessage('hello');
+    const selectedLayers = context.selection;
+    const selectedCount = selectedLayers.length;
+
+    if (selectedCount === 0) {
+        context.document.showMessage('No layers are selected.');
+    } else {
+
+        var outputString = sketch.UI.getStringFromUser('Type command', 'default');
+        interpret(outputString);
+    }
+}
+
+function interpret(input) {
+    var calculations = input.split(/(?=[a-z])/);
+    var y;
+    var frame;
+    var layer;
+    context.document.showMessage(calculations);
+    for (var i = 0; i<calculations.length; i++) {
+
+        if (calculations[i].charAt(0) === 'x') {
+            for (y = 0; y<context.selection.length; y++) {
+                layer = context.selection[y];
+                layer.absoluteRect().setRulerX(Number(calculations[i].substring(1)));
+            }
+        }
+
+        else if (calculations[i].charAt(0) === 'y') {
+            for (y = 0; y<context.selection.length; y++) {
+                layer = context.selection[y];
+                layer.absoluteRect().setRulerY(Number(calculations[i].substring(1)));
+            }
+        }
+
+        else if (calculations[i].charAt(0) === 'w') {
+            for (y = 0; y<context.selection.length; y++) {
+                layer = context.selection[y];
+                frame = layer.frame();
+                frame.setWidth(Number(calculations[i].substring(1)));
+            }
+        }
+
+        else if (calculations[i].charAt(0) === 'h') {
+            for (y = 0; y<context.selection.length; y++) {
+                layer = context.selection[y];
+                frame = layer.frame();
+                frame.setHeight(Number(calculations[i].substring(1)));
+            }
+        }
+    }
+    context.document.reloadInspector();
+}
+
+
 
 
