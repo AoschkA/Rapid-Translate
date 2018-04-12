@@ -8,7 +8,7 @@
       "identifier": "onTranslate",
       "script": "my-command.js",
       "handler" : "onTranslate",
-      "shortcut" : "ctrl shift y"
+      "shortcut" : "ctrl shift t"
     }
   ],
   "menu": {
