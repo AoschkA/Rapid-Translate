@@ -1,6 +1,8 @@
 {
   "name": "Rapid-Translate",
   "version": "0.1.0",
+  "repository": "https://github.com/AoschkA/Rapid-Translate",
+  "description": "A plugin for rapid transformation",
   "engines": {
     "sketch": ">=3.0"
   },
