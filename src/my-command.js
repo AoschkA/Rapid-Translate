@@ -9,14 +9,7 @@ if (selectedCount === 0) {
     var outputString = sketch.UI.getStringFromUser('Type commando', '');
     interpret(outputString);
 }
-/*
-copiedWidth = Math.round(frame.width());
-	copiedHeight = Math.round(frame.height());
-	copiedX = Math.round(layer.absoluteRect().rulerX());
-    copiedY = Math.round(layer.absoluteRect().rulerY());
-    */
 
-    
 /**
  * Interprets the input - the programs main function
  * 
@@ -67,7 +60,7 @@ function interpret(input) {
                         translate(extraParameters[j], value);
                     }
                 }
-                
+
                 translate(toTranslate, value);
             }
         }
@@ -77,28 +70,16 @@ function interpret(input) {
 
 function translate(toTranselate, value) {
     toTranselate = toTranselate.toLowerCase();
-    //context.document.showMessage('value: '+value);
-
-    if (toTranselate === 'x') {
-        for (y = 0; y < context.selection.length; y++) {
-            layer = context.selection[y];
+    for (y = 0; y < context.selection.length; y++) {
+        layer = context.selection[y];
+        frame = layer.frame();
+        if (toTranselate === 'x') {
             layer.absoluteRect().setRulerX(value);
-        }
-    } else if (toTranselate === 'y') {
-        for (y = 0; y < context.selection.length; y++) {
-            layer = context.selection[y];
+        } else if (toTranselate === 'y') {
             layer.absoluteRect().setRulerY(value);
-        }
-    } else if (toTranselate === 'w') {
-        for (y = 0; y < context.selection.length; y++) {
-            layer = context.selection[y];
-            frame = layer.frame();
+        } else if (toTranselate === 'w') {
             frame.setWidth(value);
-        }
-    } else if (toTranselate === 'h') {
-        for (y = 0; y < context.selection.length; y++) {
-            layer = context.selection[y];
-            frame = layer.frame();
+        } else if (toTranselate === 'h') {
             frame.setHeight(value);
         }
     }
