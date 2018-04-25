@@ -1,17 +1,19 @@
 {
-  "name": "Rapid-Translate",
-  "version": "10.0.0",
-  "repository": "https://github.com/AoschkA/Rapid-Translate",
-  "description": "A plugin for rapid transformation",
+  "name": "rapid-translate",
+  "description": "The ideal plugin to fasten your translations",
+  "version": "0.5.2",
   "engines": {
-    "sketch": ">=3.0"
+    "sketch": ">=49"
+  },
+  "repository": {
+    "url": "https://github.com/AoschkA/Rapid-Translate"
   },
   "skpm": {
-    "name": "Rapid-Translate",
+    "name": "rapid-translate",
     "manifest": "src/manifest.json",
-    "main": "plugin.sketchplugin",
-    "assets": [
-      "assets/**/*"
+    "main": "rapid-translate.sketchplugin",
+    "resources": [
+      "resources/**/main.js"
     ]
   },
   "scripts": {
@@ -21,7 +23,27 @@
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.5.2"
+    "@skpm/builder": "^0.4.0",
+    "@skpm/extract-loader": "^1.0.1",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "html-loader": "^0.5.1",
+    "style-loader": "^0.20.3"
   },
-  "author": "Jonas Praëm Andreassen <jpa@impact.dk>"
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "rxjs": "^5.5.7",
+    "sketch-module-web-view": "^0.2.0"
+  },
+  "author": "Jonas Praëm <jpa@impact.dk>"
 }

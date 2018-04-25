@@ -7,6 +7,7 @@ if (selectedCount === 0) {
     context.document.showMessage('Nothing selected..');
 } else {
     var outputString = sketch.UI.getStringFromUser('Type commando', '');
+    createSettingsPanel();
     interpret(outputString);
 }
 
@@ -18,6 +19,7 @@ if (selectedCount === 0) {
  * 
  * @param {any} input 
  */
+
 function interpret(input) {
     var parameters = input.split(/(?=[a-z])/);
     var extraParameters = [];

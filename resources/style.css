@@ -1,0 +1,16 @@
+/* some default styles to make the view more native like */
+
+html {
+  box-sizing: border-box;
+  background: transparent;
+
+  /* Prevent the page to be scrollable */
+  overflow: hidden;
+
+  /* Force the default cursor, even on text */
+  cursor: default;
+}
+
+h5 {
+  display: inline;
+}

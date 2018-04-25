@@ -1,26 +1,31 @@
-# Rapid Translate
+# draw-and-render
 
-The tool to fasten your translation process
+> draw on a canvas and render into sketch
 
-## Features
+![Screenshot](./screenshots/screenshot.png)
 
-- Known parameters: 
-  x,
-  y,
-  w (width),
-  h (height)
+## Installation
 
-- Multiple parameters to one value
-- Can handle 1 operator per value
+### From a release (simplest)
 
+* [Download](https://github.com/nichenqin/draw-and-render-sketch-plugin/releases/latest) the latest release of the plugin
+* Un-zip
+* Double-click on draw-and-render.sketchplugin
 
-## Example commandos:
+### From the sources
 
-  x50 - Sets the x value to 50
-  
-  xy100 - Sets the x and y value to 100
-  
-  xy50wh100 - Sets the x and y value to 50, Sets the width & height value to 100
-  
-  xy100/2w60 - Sets the x & y value to 100/2 (50), Sets the width value to 60
-  
+* Clone the repo
+* Install the dependencies (`npm install`)
+* Double-click on draw-and-render.sketchplugin
+
+## Usage
+
+* shortcut `command shift d`
+* draw
+* change name(optinal)
+* render!
+
+## TODO
+
+* [ ] choose rendered layer size
+* [ ] specify background color

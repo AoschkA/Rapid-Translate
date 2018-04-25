@@ -1,0 +1,26 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "rapid-translate",
+      "identifier": "webview-id",
+      "script": "webview.js",
+      "shortcut": "ctrl shift t"
+    }
+  ],
+  "menu": {
+    "title": "rapid-translate",
+    "isRoot": true,
+    "items": [
+      "webview-id"
+    ]
+  },
+  "version": "0.5.2",
+  "description": "The ideal plugin to fasten your translations",
+  "name": "rapid-translate",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/AoschkA/Rapid-Translate/master/.appcast.xml",
+  "author": "Jonas Praëm",
+  "authorEmail": "jpa@impact.dk"
+}

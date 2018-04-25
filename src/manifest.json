@@ -1,20 +1,17 @@
 {
   "compatibleVersion": 3,
   "bundleVersion": 1,
-  "icon": "icon.png",
   "commands": [
     {
-      "name": "translate",
-      "identifier": "onTranslate",
-      "script": "my-command.js",
-      "handler" : "onTranslate",
-      "shortcut" : "ctrl shift t"
+      "name": "rapid-translate",
+      "identifier": "webview-id",
+      "script": "./webview.js",
+      "shortcut": "ctrl shift t"
     }
   ],
   "menu": {
     "title": "rapid-translate",
-    "items": [
-      "onTranslate"
-    ]
+    "isRoot": true,
+    "items": ["webview-id"]
   }
 }
