@@ -11,6 +11,15 @@ html {
   cursor: default;
 }
 
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
 h5 {
   display: inline;
+}
+
+label {
+  color: red;
+  transform: 200% 0;
 }

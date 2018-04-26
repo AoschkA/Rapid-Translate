@@ -319,7 +319,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "/* some default styles to make the view more native like */\n\nhtml {\n  box-sizing: border-box;\n  background: transparent;\n\n  /* Prevent the page to be scrollable */\n  overflow: hidden;\n\n  /* Force the default cursor, even on text */\n  cursor: default;\n}\n\nh5 {\n  display: inline;\n}", ""]);
+exports.push([module.i, "/* some default styles to make the view more native like */\n\nhtml {\n  box-sizing: border-box;\n  background: transparent;\n\n  /* Prevent the page to be scrollable */\n  overflow: hidden;\n\n  /* Force the default cursor, even on text */\n  cursor: default;\n}\n\nbody {\n  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif\n}\n\nh5 {\n  display: inline;\n}\n\nlabel {\n  color: red;\n  transform: 200% 0;\n}", ""]);
 
 // exports
 

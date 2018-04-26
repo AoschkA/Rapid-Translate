@@ -116,7 +116,7 @@ var page = document.selectedPage;
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/0d67545113a11c653e2e0a494028c8a4.html").path();
+module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/81176e8052387692093865c1b47c5d8c.html").path();
 
 /***/ }),
 /* 2 */
