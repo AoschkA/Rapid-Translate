@@ -21,5 +21,17 @@ h5 {
 
 label {
   color: red;
-  transform: 200% 0;
+  transform: translateX(200%);
+}
+
+.form-control {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+}
+
+.form-container {
+  height: 100%;
+  width: 100%;
+  padding: 20px 50px 20px 50px;
 }

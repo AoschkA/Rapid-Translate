@@ -8,7 +8,7 @@
   <title>Rapid Translate</title>
 </head>
 
-<body>
+<>
   <!--
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -19,27 +19,13 @@
   <h2>Rapid Translate</h2>
   <div class="form-container">
     <form onsubmit="interpret()">
-      <h5>Position</h5>
       <div class="form-group">
-
+        <h5>Position</h5>
         <label for="x">x</label>
-        <input class="form-control" id="x">
+        <input class="form-control" type="number" id="x" placeholder="x">
 
         <label for="y">y</label>
-        <input class="form-control" id="y">
-
-      </div>
-
-      <hr>
-
-      <h5>Size</h5>
-      <div class="form-group">
-
-        <label for="width">w</label>
-        <input class="form-control" id="width">
-
-        <label for="height">h</label>
-        <input class="form-control" id="height">
+        <input class="form-control" type="number" id="y" placeholder="y">
 
       </div>
 
@@ -61,6 +47,6 @@
       }
     });
   </script>
-</body>
+  </body>
 
 </html>

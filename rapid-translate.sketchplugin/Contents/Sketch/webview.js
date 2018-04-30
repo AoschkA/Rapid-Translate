@@ -87,8 +87,8 @@ exports["default"] = function (context) {
       identifier: "rapid-translate",
       x: 0,
       y: 0,
-      width: 500,
-      height: 300,
+      width: 400,
+      height: 400,
       blurredBackground: true,
       onlyShowCloseButton: true,
       hideTitleBar: false,
@@ -116,7 +116,7 @@ var page = document.selectedPage;
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/81176e8052387692093865c1b47c5d8c.html").path();
+module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/fcebc372e5fd3736bfa0ab2e9e1edbf6.html").path();
 
 /***/ }),
 /* 2 */
