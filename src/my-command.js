@@ -6,7 +6,7 @@ const selectedCount = selectedLayers.length;
 if (selectedCount === 0) {
     context.document.showMessage('Nothing selected..');
 } else {
-    var outputString = sketch.UI.getStringFromUser('Type commando', '');
+    var outputString = sketch.UI.getStringFromUser('Rapid Translate', '');
     interpret(outputString);
 }
 
@@ -30,7 +30,6 @@ function interpret(input) {
             var value;
             if (isNaN(parameters[i].substring(1)) || parameters[i].charAt(1) === '+' ||  parameters[i].charAt(1) === '-') {
                 var tokens = parameters[i].substring(1).split(/([\+\-\*\/])/);
-                context.document.showMessage('tokens: ' + tokens[1]);
 
                 if (tokens[1] === '+' || tokens[1] === '-' || tokens[1] === '*' || tokens[1] === '/') {
                     // Raw translation
@@ -88,7 +87,6 @@ function translate(toTranselate, value) {
 function translateFromOriginalValue(toTranslate, operator, value) {
     value = Number(value);
     for (y = 0; y < context.selection.length; y++) {
-        context.document.showMessage('function');
         layer = context.selection[y];
         frame = layer.frame();
         // Copying original values
