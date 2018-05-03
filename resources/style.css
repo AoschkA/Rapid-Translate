@@ -12,26 +12,55 @@ html {
 }
 
 body {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h5 {
-  display: inline;
+  display: inline-block;
+  width: 80px;
+  overflow: hidden;
+}
+
+.form-group {
+
 }
 
 label {
-  color: red;
+  color: grey;
+  opacity: 0.6;
   transform: translateX(200%);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 10px 30px 10px 30px;
 }
 
 .form-control {
   display: inline-block;
+  padding-left: 20px;
+  height: 30px;
+}
+
+.form-small {
   width: 100px;
-  padding: 10px;
+}
+
+.form-large {
+  width: 220px;
 }
 
 .form-container {
   height: 100%;
   width: 100%;
-  padding: 20px 50px 20px 50px;
+  padding: 20px 60px 20px 60px;
+}
+
+.btn {
+  float: right;
+  margin-right: 20px;
 }

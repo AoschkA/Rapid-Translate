@@ -23,9 +23,9 @@
       <div class="form-group">
         <h5>Position</h5>
         <label for="x">x</label>
-        <input class="form-control form-small" id="x">
+        <input class="form-control" id="x">
         <label for="y">y</label>
-        <input class="form-control form-small" id="y">
+        <input class="form-control" id="y">
       </div>
 
       <hr>
@@ -33,21 +33,22 @@
       <div class="form-group">
         <h5>Size</h5>
         <label for="width">w</label>
-        <input class="form-control form-small" id="width">
+        <input class="form-control" id="width">
         <label for="height">h</label>
-        <input class="form-control form-small" id="height">
+        <input class="form-control" id="height">
       </div>
 
       <hr>
 
       <div class="form-group">
         <h5>Syntax</h5>
-        <input class="form-control form-large" id="syntax" autofocus>
+        <input class="form-control" id="syntax" autofocus>
       </div>
-      <button class="btn btn-primary" type="submit" onclick="interpret()" id="btnSubmit">Submit</button>
+      <button class="btn btn-primary" type="button" id="btnSubmit">Submit</button>
     </form>
   </div>
 </div>
+<!-- notice the "../" here. It's because webview.js will be compiled in a different folder -->
 <script src="../main.js"></script>
 <script>
     var input = document.getElementById("syntax");

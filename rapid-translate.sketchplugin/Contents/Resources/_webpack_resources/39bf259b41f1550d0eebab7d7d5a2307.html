@@ -18,7 +18,7 @@
 <div class="container">
   <h2>Rapid Translate</h2>
   <div class="form-container">
-    <form onsubmit="interpret()">
+    <form onsubmit="return interpret()" name="theForm">
 
       <div class="form-group">
         <h5>Position</h5>
@@ -44,10 +44,11 @@
         <h5>Syntax</h5>
         <input class="form-control form-large" id="syntax" autofocus>
       </div>
-      <button class="btn btn-primary" type="submit" onclick="interpret()" id="btnSubmit">Submit</button>
+      <button class="btn btn-primary" type="submit" id="btnSubmit">Submit</button>
     </form>
   </div>
 </div>
+<!-- notice the "../" here. It's because webview.js will be compiled in a different folder -->
 <script src="../main.js"></script>
 <script>
     var input = document.getElementById("syntax");
