@@ -94,7 +94,6 @@ function translateFromOriginalValue(toTranslate, operator, value) {
         copiedH = Math.round(frame.height());
         copiedX = Math.round(layer.absoluteRect().rulerX());
         copiedY = Math.round(layer.absoluteRect().rulerY());
-        var value;
 
         if (toTranslate === 'x') {
             if (operator === '+') {
@@ -124,7 +123,7 @@ function translateFromOriginalValue(toTranslate, operator, value) {
                 break;
             }
             layer.absoluteRect().setRulerY(value);
-        } else if (operator === 'w') {
+        } else if (toTranslate === 'w') {
             if (operator === '+') {
                 value = Number(copiedW) + value;
             } else if (operator === '-') {
@@ -138,7 +137,7 @@ function translateFromOriginalValue(toTranslate, operator, value) {
                 break;
             }
             frame.setWidth(value);
-        } else if (operator === 'h') {
+        } else if (toTranslate === 'h') {
             if (operator === '+') {
                 value = Number(copiedH) + value;
             } else if (operator === '-') {
